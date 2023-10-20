@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using JavaScript" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="icon" href="/assets/asset/logo-mobile.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Kanban task management web app</title>
+    <script defer="defer" src="/static/js/main.52abaef4.js"></script>
+    <!-- <link href="/static/css/main.62ef9f52.css" rel="stylesheet" /> -->
+    <link href="./src/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="app light">
+        <div class="header-container">
+          <header>
+            <div class="logo-container">
+              <img
+                class="logo"
+                src="/assets/asset/logo-mobile.svg"
+                alt="logo"
+              />
+              <h3 class="logo-text">kanban</h3>
+            </div>
+            <div class="header-name-container heading-L">
+              <h3 class="header-name">Platform Launch</h3>
+            </div>
+            <button class="add-task-btn heading-M false">+ Add New Task</button
+            ><img
+              class="elipsis"
+              src="/assets/asset/icon-vertical-ellipsis.svg"
+              alt="menu for deleting or editing board"
+            />
+
+            <!-- Edit and delete board -->
+            <!-- <div class="elipsis-menu text-L"><p>Edit board</p><p class="elipsis-menu-red">Delete board</p></div> -->
+          </header>
+        </div>
+
+        <!-- Add a new task -->
+        <!-- <div class="modal-container dimmed"><div class="modal"><h3>Add New Task</h3><label for="task-name-input">Task Name</label><div class="input-container"><input id="task-name-input" type="text" placeholder="e.g. Take coffee break" class="" value=""></div><label for="task-name-input">Description</label><div class="description-container"><textarea id="task-description-input" placeholder="e.g. It's always good to take a break. This  15 minute break will  recharge the batteries  a little."></textarea></div><label>Subtasks</label><div class="modal-columns"><div class="modal-column"><div class="input-container"><input type="text" class="" value=""></div><img src="assets/asset/icon-cross.svg" alt="delete-column-icon"></div><div class="modal-column"><div class="input-container"><input type="text" class="" value=""></div><img src="assets/asset/icon-cross.svg" alt="delete-column-icon"></div></div><button class="add-column-btn btn-light">+ Add New Subtask</button><div class="select-column-container"><label class="text-M">Current Status</label><select class="select-status text-L"><option class="status-options">Todo</option><option class="status-options">Doing</option><option class="status-options">Done</option></select></div><button class="create-btn">Create Task</button></div></div> -->
+        <div class="board open-sidebar">
+          <div class="sidebar false false">
+            <div class="dropdown-container">
+              <div class="dropdown-modal">
+                <h3>ALL BOARDS (3)</h3>
+                <div class="dropdown-boards">
+                  <div class="dropdown-board board-active">
+                    <img
+                      class="filter-white"
+                      src="assets/asset/icon-board.svg"
+                      alt="board"
+                    />
+                    Platform Launch
+                  </div>
+                  <div class="dropdown-board">
+                    <img
+                      class="filter-white"
+                      src="assets/asset/icon-board.svg"
+                      alt="board"
+                    />
+                    Marketing Plan
+                  </div>
+                  <div class="dropdown-board">
+                    <img
+                      class="filter-white"
+                      src="assets/asset/icon-board.svg"
+                      alt="board"
+                    />
+                    Roadmap
+                  </div>
+                  <div class="dropdown-board dropdown-create-board-btn">
+                    <img
+                      class="filter-purple"
+                      alt="board"
+                      src="assets/asset/icon-board.svg"
+                    />
+                    + Create New Board
+                  </div>
+                </div>
+                <div class="theme-toggle">
+                  <img
+                    src="assets/asset/icon-light-theme.svg"
+                    alt="sun indicating light mode"
+                  /><label class="switch"
+                    ><input type="checkbox" /><span
+                      class="slider round"
+                    ></span></label
+                  ><img
+                    src="assets/asset/icon-dark-theme.svg"
+                    alt="moon indicating dark mode"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="toggle-sidebar-container false">
+              <img
+                src="assets/asset/icon-hide-sidebar.svg"
+                alt="show/hide sidebar icon"
+              />
+              <p class="heading-M">Hide Sidebar</p>
+            </div>
+          </div>
+          <div class="column">
+            <p class="col-name heading-S">Todo (4)</p>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">Build UI for onboarding flow</p>
+                <p class="num-of-subtasks text-M">1 of 3 subtasks</p>
+              </div>
+              <!-- Task details -->
+              <!-- <div class="modal-container dimmed"><div class="task-modal false"><div class="task-modal-title-container"><p class="heading-L">Build UI for onboarding flow</p><img class="task-modal-elipsis" src="assets/asset/icon-vertical-ellipsis.svg" alt="task options btn"></div><p class="task-description text-L"></p><p class="subtasks-completed heading-S">Subtasks (1 of 3)</p><div class="subtask"><input class="subtask-checkbox" type="checkbox" checked=""><p class="subtask-text text-M checked">Sign up page</p></div><div class="subtask"><input class="subtask-checkbox" type="checkbox"><p class="subtask-text text-M false">Sign in page</p></div><div class="subtask"><input class="subtask-checkbox" type="checkbox"><p class="subtask-text text-M false">Welcome page</p></div><div class="select-column-container"><label class="text-M">Current Status</label><select class="select-status text-L"><option class="status-options">Todo</option><option class="status-options">Doing</option><option class="status-options">Done</option></select></div></div></div> -->
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">Build UI for search</p>
+                <p class="num-of-subtasks text-M">0 of 1 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">Build settings UI</p>
+                <p class="num-of-subtasks text-M">0 of 2 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">
+                  QA and test all major user journeys
+                </p>
+                <p class="num-of-subtasks text-M">0 of 2 subtasks</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <p class="col-name heading-S">Doing (6)</p>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">
+                  Design settings and search pages
+                </p>
+                <p class="num-of-subtasks text-M">2 of 3 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">
+                  Add account management endpoints
+                </p>
+                <p class="num-of-subtasks text-M">2 of 3 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">Design onboarding flow</p>
+                <p class="num-of-subtasks text-M">1 of 3 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">Add search enpoints</p>
+                <p class="num-of-subtasks text-M">1 of 2 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">Add authentication endpoints</p>
+                <p class="num-of-subtasks text-M">1 of 2 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">
+                  Research pricing points of various competitors and trial
+                  different business models
+                </p>
+                <p class="num-of-subtasks text-M">1 of 3 subtasks</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <p class="col-name heading-S">Done (7)</p>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">Conduct 5 wireframe tests</p>
+                <p class="num-of-subtasks text-M">1 of 1 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">Create wireframe prototype</p>
+                <p class="num-of-subtasks text-M">1 of 1 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">
+                  Review results of usability tests and iterate
+                </p>
+                <p class="num-of-subtasks text-M">3 of 3 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">
+                  Create paper prototypes and conduct 10 usability tests with
+                  potential customers
+                </p>
+                <p class="num-of-subtasks text-M">2 of 2 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">Market discovery</p>
+                <p class="num-of-subtasks text-M">1 of 1 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">Competitor analysis</p>
+                <p class="num-of-subtasks text-M">2 of 2 subtasks</p>
+              </div>
+            </div>
+            <div>
+              <div draggable="true" class="task">
+                <p class="task-title heading-M">Research the market</p>
+                <p class="num-of-subtasks text-M">2 of 2 subtasks</p>
+              </div>
+            </div>
+          </div>
+          <div class="add-column-column heading-XL">+ New Column</div>
+
+          <!-- Edit board/ new column modal -->
+          <!-- <div class="modal-container dimmed"><div class="modal"><h3>Edit board</h3><label for="board-name-input">Board Name</label><div class="input-container"><input id="board-name-input" type="text" placeholder="e.g. Web Design" class="" value="Platform Launch"></div><label>Board Columns</label><div class="modal-columns"><div class="modal-column"><div class="input-container"><input type="text" class="" value="Todo"></div><img src="assets/asset/icon-cross.svg" alt="delete-column-icon"></div><div class="modal-column"><div class="input-container"><input type="text" class="" value="Doing"></div><img src="assets/asset/icon-cross.svg" alt="delete-column-icon"></div><div class="modal-column"><div class="input-container"><input type="text" class="" value="Done"></div><img src="assets/asset/icon-cross.svg" alt="delete-column-icon"></div></div><button class="add-column-btn btn-light">+ Add New Column</button><button class="create-btn">Save Changes</button></div></div> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
