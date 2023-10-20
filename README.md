@@ -9,15 +9,14 @@ Why the project is useful.
 
 - HTML
 
-* Page done but filled with dummy data
+  - Page done but filled with dummy data
 
 - CSS
 
-* Needs refactoring
+  - Needs refactoring
 
 - Javascript
-
-* Not yet started
+  - Not yet started
 
 ## Getting started
 
