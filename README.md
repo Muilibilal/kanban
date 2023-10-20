@@ -10,6 +10,7 @@ Why the project is useful.
 - HTML
 
   - Page done but filled with dummy data
+  - Todo: Mobile Responsiveness
 
 - CSS
 
