@@ -714,7 +714,7 @@ textarea::placeholder {
 .select-status {
   -webkit-appearance: none;
   appearance: none;
-  background-image: url(/static/media/icon-chevron-down.77595c15c9072ba0ef8a.svg);
+  background-image: url(../../assets/asset/icon-chevron-down.svg);
   background-position: right 16px top 50%;
   background-repeat: no-repeat;
   border: 1px solid #828fa340;
